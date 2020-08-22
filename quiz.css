@@ -33,7 +33,7 @@ body{
 
 .option{
   width: 480px;
-  padding: 10px 5px 10 15px;    /*fix the borders in option text*/
+  padding: 20px;
   border: 1px solid #08038C;
   border-radius: 20px;
   margin: 15px 10px 15px 10px;
@@ -47,13 +47,21 @@ body{
   }
 
 .nextBtn{
+  padding: 12px;
+  font-size: 16px;
+  border-radius: 20px;
   float: right;
   margin-top: 20px;
+  background-color: green;
 }
 
 .prevBtn{
+  padding: 12px;
   float: left;
   margin-top: 20px;
+  background-color: green;
+  font-size: 16px;
+  border-radius: 20px;
 }
 
 .nextBtn:hover{
