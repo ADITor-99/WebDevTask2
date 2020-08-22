@@ -1,0 +1,43 @@
+body{
+  font-family: serif;
+  background: white;
+}
+
+.container{
+  height: auto;
+  width: auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  background: rgba(255, 255 , 255, 0.5);
+  padding: 20px;
+  border: 1px solid #08038C;
+  border-radius: 20px;
+  box-shadow: 0 0 8px 3px black;
+}
+
+.title{
+  text-align: center;
+  padding: 0px 0 20px 0;
+}
+
+.question{
+  padding: 20px;
+  border: 1px solid #08038C;
+  border-radius: 20px;
+  margin: 10px 0 10px 0;
+  font-size: 25px;
+  text-align: center;
+}
+
+.option{
+  width: 480px;
+  padding: 10px 5px 10 15px;    /*Option padding not working for the text in the option*/
+  border: 1px solid #08038C;
+  border-radius: 20px;
+  margin: 15px 10px 15px 10px;
+  vertical-align: middle;
+  display: block;
+  font-size: 22px;
+  }
