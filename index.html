@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>COVID Quiz</title>
+  </head>
+  <body>
+    <div id="quizContainer" class="container">
+      <div class="title">COVID Quiz</div>
+      <div id="question" class="question"></div>
+      <label class="option"><input type="radio" name="option" value="1" /><span id="opt1"> </span></label>
+      <label class="option"><input type="radio" name="option" value="2" /><span id="opt2"> </span></label>
+      <label class="option"><input type="radio" name="option" value="3" /><span id="opt3"> </span></label>
+      <label class="option"><input type="radio" name="option" value="4" /><span id="opt4"> </span></label>
+      <button id="nextButton" class="nextBtn" onclick="loadNextQuestion();">Next Question</button>
+      <button id="prevButton" class="prevBtn" onclick="loadPrevQuestion();">Previous Question</button>
+    </div>
+    <div id="result" class="resultContainer" style="display:none;"></div>
+  </body>
+</html>
