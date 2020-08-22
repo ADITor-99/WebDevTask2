@@ -33,7 +33,7 @@ body{
 
 .option{
   width: 480px;
-  padding: 10px 5px 10 15px;    /*Option padding not working for the text in the option*/
+  padding: 10px 5px 10 15px;    /*fix the borders in option text*/
   border: 1px solid #08038C;
   border-radius: 20px;
   margin: 15px 10px 15px 10px;
