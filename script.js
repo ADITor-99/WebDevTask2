@@ -17,8 +17,30 @@ var radio4 = document.getElementById('radio4');
 var nextBtn = document.getElementById('nextButton');
 var prevBtn = document.getElementById('prevButton');
 var resultCont = document.getElementById('result');
+var notifyCont = document.getElementById('notify');
+var notifyCont2 = document.getElementById('notify2');
+var notification = document.getElementById('check');
+var notification2 = document.getElementById('check2');
 
+function notify(){
+  container.style.display = 'none';
+  notifyCont.style.display = '';
+  }
 
+  function notify2(){
+    container.style.display = 'none';
+    notifyCont2.style.display = '';
+    }
+
+  function goOn(){
+    container.style.display = '';
+    notifyCont.style.display = 'none';
+  }
+
+  function goOn2(){
+    container.style.display = '';
+    notifyCont2.style.display = 'none';
+  }
 
 function loadQuestion(){
   console.log(currentQuestion)
@@ -54,9 +76,6 @@ function loadQuestion(){
         break
       }
     }
-
-
-
   }
 
   questionEl.textContent = '(Q' + (currentQuestion+1) + '.)  ' + questions[currentQuestion].question;
@@ -66,12 +85,14 @@ function loadQuestion(){
   opt4.textContent = '   ' + questions[currentQuestion].option4;
   }
 
+
   function loadNextQuestion() {
 
       var selectedOption = document.querySelector('input[type=radio]:checked');
       if(!selectedOption){
         alert("Please select an option to proceed!")
       }
+
 
       var answer = selectedOption.value;
 
@@ -84,9 +105,11 @@ function loadQuestion(){
       if(answer == questions[currentQuestion].answer){
         score += 10;
         console.log('correct answer marked');
+        notify();
       }
       else{
         console.log('incorrect answer marked');
+        notify2();
       }
 
       currentQuestion++;
@@ -102,9 +125,15 @@ function loadQuestion(){
         nextBtn.textContent = 'Finish';
       }
 
+      if(currentQuestion != totQuestions-1){
+        nextBtn.textContent = 'Next';
+      }
+
       if(currentQuestion == totQuestions){
         container.style.display = 'none';
         resultCont.style.display = '';
+        notifyCont.style.display = 'none';
+        notifyCont2.style.display = 'none';
         resultCont.textContent = 'Your score is ' + score + ' out of 100';
       }
 
@@ -133,15 +162,17 @@ function loadPrevQuestion(){
 
   if(answer == questions[currentQuestion].answer){
     console.log('correct answer marked');
+    notify();
   }
   else{
     console.log('incorrect answer marked');
+    notify2();
   }
 
   selectedOption.checked = false;
 
   currentQuestion--;
-
+  console.log("previous buttnon count incremented");
 
   if(currentQuestion == 0){
     prevBtn.style.display = 'none';
@@ -150,7 +181,12 @@ function loadPrevQuestion(){
     prevBtn.style.display = '';
   }
 
-
+  if(currentQuestion == totQuestions-1){
+    nextBtn.textContent = 'Finish';
+  }
+  else{
+    nextBtn.textContent = 'Next';
+  }
 
   loadQuestion();
 

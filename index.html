@@ -18,10 +18,18 @@
       <label class="option"><input id="radio2" type="radio" name="option" value="2" /><span id="opt2">2</span></label>
       <label class="option"><input id="radio3" type="radio" name="option" value="3" /><span id="opt3">3</span></label>
       <label class="option"><input id="radio4" type="radio" name="option" value="4" /><span id="opt4">4</span></label>
-      <br><br><button id="nextButton" class="nextBtn" onclick="loadNextQuestion();">Next Question</button>
-      <button id="prevButton" class="prevBtn" onclick="loadPrevQuestion();">Previous Question</button>
+      <br><br><button id="nextButton" class="nextBtn" onclick="loadNextQuestion();">Next</button>
+      <button id="prevButton" class="prevBtn" onclick="loadPrevQuestion();">Previous</button>
       </div>
     <div id="result" class="resultContainer" style="display:none;"></div>
+    <div id="notify" class="notifyContainer" style="display:none;">
+      <p id="check">"Your answer is CORRECT!!"</p>
+      <button id="continue1" class="continue" onclick="goOn();">Continue</button>
+    </div>
+    <div id="notify2" class="notifyContainer" style="display:none;">
+      <p id="check2">"Your answer is INCORRECT!!"</p>
+      <button id="continue2" class="continue" onclick="goOn2();">Continue</button>
+    </div>
     <script src="array.js"></script>
     <script src="script.js"></script>
     </body>
