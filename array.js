@@ -5,7 +5,7 @@ var questions = [{
   "option3": "Smartphone",
   "option4": "Both mask and sanatizer",
   "answer": "4",
-  "answered": "false",
+  "answered": false,
   "userInput": ""
 }, {
   "question": "What are the symptoms of COVID-19?",
@@ -14,7 +14,7 @@ var questions = [{
   "option3": "Fever",
   "option4": "All",
   "answer": "4",
-  "answered": "false",
+  "answered": false,
   "userInput": ""
 }, {
   "question": "Where did COVID-19 originated?",
@@ -23,7 +23,7 @@ var questions = [{
   "option3": "China",
   "option4": "Australia",
   "answer": "3",
-  "answered": "false",
+  "answered": false,
   "userInput": ""
 }, {
   "question": "How is COVID-19 passed on?",
@@ -32,7 +32,7 @@ var questions = [{
   "option3": "Smartphone",
   "option4": "Does not spreads",
   "answer": "1",
-  "answered": "false",
+  "answered": false,
   "userInput": ""
 }, {
   "question": "Can you always tell if someone has COVID-19? ",
@@ -41,7 +41,7 @@ var questions = [{
   "option3": "Yes – you can tell just by where a person comes from, their race and ethnicity",
   "option4": "It depends wether you are a doctor or not",
   "answer": "1",
-  "answered": "false",
+  "answered": false,
   "userInput": ""
 }, {
   "question": "Can washing your hands protect you from COVID-19? ",
@@ -50,7 +50,7 @@ var questions = [{
   "option3": "No – Washing your hands doesn’t stop COVID-19",
   "option4": "Depends on the soap brand",
   "answer": "2",
-  "answered": "false",
+  "answered": false,
   "userInput": ""
 }, {
   "question": "Which of the following people is COVID-19 more dangerous for?",
@@ -59,7 +59,7 @@ var questions = [{
   "option3": "People with certain underlying diseases",
   "option4": "Both B and C",
   "answer": "4",
-  "answered": "false",
+  "answered": false,
   "userInput": ""
 }, {
   "question": "When should fabric face masks be worn?",
@@ -68,7 +68,7 @@ var questions = [{
   "option3": "In small shops",
   "option4": "All of the above",
   "answer": "4",
-  "answered": "false",
+  "answered": false,
   "userInput": ""
 }, {
   "question": "Can COVID-19 be cured? ",
@@ -77,7 +77,7 @@ var questions = [{
   "option3": "No – but most people get better by themselves",
   "option4": "Not Sure",
   "answer": "3",
-  "answered": "false",
+  "answered": false,
   "userInput": ""
 }, {
   "question": "Which of the following is an example of physical distancing?",
@@ -86,6 +86,6 @@ var questions = [{
   "option3": "You stop speaking to your friends on the phone",
   "option4": "None",
   "answer": "1",
-  "answered": "false",
+  "answered": false,
   "userInput": ""
 }]

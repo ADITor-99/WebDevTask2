@@ -8,26 +8,62 @@ var opt1 = document.getElementById('opt1');
 var opt2 = document.getElementById('opt2');
 var opt3 = document.getElementById('opt3');
 var opt4 = document.getElementById('opt4');
+
+var radio1 = document.getElementById('radio1');
+var radio2 = document.getElementById('radio2');
+var radio3 = document.getElementById('radio3');
+var radio4 = document.getElementById('radio4');
+
 var nextBtn = document.getElementById('nextButton');
 var prevBtn = document.getElementById('prevButton');
 var resultCont = document.getElementById('result');
 
 
-function loadQuestion(questionIndex){
 
-  var q = questions[questionIndex];
+function loadQuestion(){
+  console.log(currentQuestion)
+  radio1.checked = false
+  radio2.checked = false
+  radio3.checked = false
+  radio4.checked = false
 
-  if(q.answered == "true"){
-    var selectedOption = document.querySelector('input[type=radio]:checked');
-    var answer = selectedOption.value;
-    answer = q.userInput;
+  var answer = questions[currentQuestion].userInput;
+
+  if (questions[currentQuestion].answered){
+    // document.querySelector('input[type=radio]:checked');
+
+    switch(answer){
+      case "1": {
+        radio1.checked = true
+        console.log("1 checked")
+        break
+      }
+      case "2": {
+        radio2.checked = true
+        console.log("2 checked")
+        break
+      }
+      case "3": {
+        radio3.checked = true
+        console.log("3 checked")
+        break
+      }
+      case "4": {
+        radio4.checked = true
+        console.log("4 checked")
+        break
+      }
+    }
+
+
+
   }
 
-  questionEl.textContent = q.question;
-  opt1.textContent = q.option1;
-  opt2.textContent = q.option2;
-  opt3.textContent = q.option3;
-  opt4.textContent = q.option4;
+  questionEl.textContent = '(Q' + (currentQuestion+1) + '.)  ' + questions[currentQuestion].question;
+  opt1.textContent = '   ' + questions[currentQuestion].option1;
+  opt2.textContent = '   ' + questions[currentQuestion].option2;
+  opt3.textContent = '   ' + questions[currentQuestion].option3;
+  opt4.textContent = '   ' + questions[currentQuestion].option4;
   }
 
   function loadNextQuestion() {
@@ -39,17 +75,21 @@ function loadQuestion(questionIndex){
 
       var answer = selectedOption.value;
 
-      if(questions[currentQuestion].answered == "false"){
-        questions[currentQuestion].userInput.push = answer;
-        questions[currentQuestion].answered.push = "true";
+      if(!questions[currentQuestion].answered){
+        console.log("Option selected"+answer)
+        questions[currentQuestion].userInput = answer;
+        questions[currentQuestion].answered = true;
       }
 
       if(answer == questions[currentQuestion].answer){
         score += 10;
+        console.log('correct answer marked');
+      }
+      else{
+        console.log('incorrect answer marked');
       }
 
       currentQuestion++;
-      answer.checked = false;
 
       if(currentQuestion == 0){
         prevBtn.style.display = 'none';
@@ -65,12 +105,11 @@ function loadQuestion(questionIndex){
       if(currentQuestion == totQuestions){
         container.style.display = 'none';
         resultCont.style.display = '';
-        resultCont.textContent = 'your score is ' + score + ' out of 100';
+        resultCont.textContent = 'Your score is ' + score + ' out of 100';
       }
 
 
-      loadQuestion(currentQuestion);
-      selectedOption.checked = false;
+      loadQuestion();
 
 }
 
@@ -78,15 +117,25 @@ function loadPrevQuestion(){
 
   var selectedOption = document.querySelector('input[type=radio]:checked');
   if(!selectedOption){
-    alert('Please select an option to preceed');
+    alert('Please select an option to proceed');
     return;
   }
 
-   var answer = selectedOption.value;
+  var answer = selectedOption.value;
 
-  if(questions[currentQuestion].answered == "false"){
-    questions[currentQuestion].userInput.push = answer;
-    questions[currentQuestion].answered.push = "true";
+  if(!questions[currentQuestion].answered){
+    questions[currentQuestion].userInput = answer;
+    questions[currentQuestion].answered = true;
+  }
+
+  var selectedOption = document.querySelector('input[type=radio]:checked');
+  var answer = selectedOption.value;
+
+  if(answer == questions[currentQuestion].answer){
+    console.log('correct answer marked');
+  }
+  else{
+    console.log('incorrect answer marked');
   }
 
   selectedOption.checked = false;
@@ -101,7 +150,9 @@ function loadPrevQuestion(){
     prevBtn.style.display = '';
   }
 
-  loadQuestion(currentQuestion);
+
+
+  loadQuestion();
 
 }
 
@@ -112,4 +163,4 @@ else {
   prevBtn.style.display = '';
 }
 
-loadQuestion(currentQuestion);
+loadQuestion();
