@@ -3,6 +3,33 @@ body{
   background: #252B49;
 }
 
+.sideNav{
+  height: 100%;
+  width: 60px;
+  position: fixed;
+  z-index: 1;
+  background-color: black;
+  top: 0;
+  left: 0;
+
+}
+
+.qNumber{
+  color: white;
+  border: 2px solid white;
+  border-radius: 45px;
+  margin: 26px 10px 26px 7px;
+  text-align: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-family: cursive;
+}
+
+.qNumber:hover{
+  cursor: pointer;
+  background-color: darkgrey;
+}
+
 .container{}
 
 .continue{

@@ -21,6 +21,21 @@ var notifyCont = document.getElementById('notify');
 var notifyCont2 = document.getElementById('notify2');
 var notification = document.getElementById('check');
 var notification2 = document.getElementById('check2');
+var sideNav = document.getElementById('sideNav');
+
+for(let i=0; i<totQuestions; i++){
+    let qn = document.createElement('div')
+    qn.className = 'qNumber'
+    qn.id = 'qn'+i
+    qn.textContent = i+1
+    qn.addEventListener('click', () => {
+        currentQuestion = i
+      loadQuestion(currentQuestion);
+      var show = document.getElementById(`qn${i}`);
+      show.style.background = 'darkblue';
+    })
+    sideNav.appendChild(qn);
+}
 
 function notify(){
   container.style.display = 'none';
@@ -83,6 +98,10 @@ function loadQuestion(){
   opt2.textContent = '   ' + questions[currentQuestion].option2;
   opt3.textContent = '   ' + questions[currentQuestion].option3;
   opt4.textContent = '   ' + questions[currentQuestion].option4;
+
+  var show = document.getElementById(`qn${currentQuestion}`);
+  show.style.background = 'darkblue';
+
   }
 
 
@@ -105,10 +124,14 @@ function loadQuestion(){
       if(answer == questions[currentQuestion].answer){
         score += 10;
         console.log('correct answer marked');
+        var show = document.getElementById(`qn${currentQuestion}`);
+        show.style.background = 'green';
         notify();
       }
       else{
         console.log('incorrect answer marked');
+        var show = document.getElementById(`qn${currentQuestion}`);
+        show.style.background = 'red';
         notify2();
       }
 
@@ -162,10 +185,14 @@ function loadPrevQuestion(){
 
   if(answer == questions[currentQuestion].answer){
     console.log('correct answer marked');
+    var show = document.getElementById(`qn${currentQuestion}`);
+    show.style.background = 'green';
     notify();
   }
   else{
     console.log('incorrect answer marked');
+    var show = document.getElementById(`qn${currentQuestion}`);
+    show.style.background = 'red';
     notify2();
   }
 
